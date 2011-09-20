@@ -32,9 +32,9 @@
     return [_weakRefs count];
 }
 
-- (id)objectAtIndex: (NSUInteger)index
+- (id)objectAtIndex: (NSUInteger)pos
 {
-    return [[_weakRefs objectAtIndex: index] target];
+    return [[_weakRefs objectAtIndex: pos] target];
 }
 
 - (void)addObject: (id)anObject
@@ -42,10 +42,10 @@
     [_weakRefs addObject: [MAZeroingWeakRef refWithTarget: anObject]];
 }
 
-- (void)insertObject: (id)anObject atIndex: (NSUInteger)index
+- (void)insertObject: (id)anObject atIndex: (NSUInteger)pos
 {
     [_weakRefs insertObject: [MAZeroingWeakRef refWithTarget: anObject]
-                    atIndex: index];
+                    atIndex: pos];
 }
 
 - (void)removeLastObject
@@ -53,14 +53,14 @@
     [_weakRefs removeLastObject];
 }
 
-- (void)removeObjectAtIndex: (NSUInteger)index
+- (void)removeObjectAtIndex: (NSUInteger)pos
 {
-    [_weakRefs removeObjectAtIndex: index];
+    [_weakRefs removeObjectAtIndex: pos];
 }
 
-- (void)replaceObjectAtIndex: (NSUInteger)index withObject: (id)anObject
+- (void)replaceObjectAtIndex: (NSUInteger)pos withObject: (id)anObject
 {
-    [_weakRefs replaceObjectAtIndex: index
+    [_weakRefs replaceObjectAtIndex: pos
                          withObject: [MAZeroingWeakRef refWithTarget: anObject]];
 }
 

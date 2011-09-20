@@ -19,8 +19,8 @@
     id noteObj = [self addObserverForName: name object:object queue: nil usingBlock: ^(NSNotification *note) {
         NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
         
-        id observer = [ref target];
-        [observer performSelector: selector withObject: note];
+        id tobserver = [ref target];
+        [tobserver performSelector: selector withObject: note];
         
         [pool release];
     }];
